@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './App.css';
 
-class DrumMachine extends Component {
+class App extends Component {
   constructor (props) {
     super (props)
     this.state = {
@@ -130,4 +130,4 @@ class DrumMachine extends Component {
 }
 }
 
-export default DrumMachine;
+export default App;
