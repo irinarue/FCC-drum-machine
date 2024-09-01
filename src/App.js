@@ -106,20 +106,20 @@ class App extends Component {
 
     const audioName = this.state.currentAudio.name;
 
-    const powerBtn = document.getElementById("powerBtn");
-    if (this.state.isOn) {
-      powerBtn.style.backgroundColor = "olive";
-      powerBtn.innerText = "ON";
-    } else {
-      powerBtn.style.backgroundColor = "darkred";
-      powerBtn.innerText = "OFF";
-    };
+    const powerBtnStyle = {
+      backgroundColor: isOn ? 'olive' : 'darkred',
+    }
     
   return (
     <div>
       <h1>The Drum Machine</h1>
       <h3>Your forever favourite DJ!</h3>
-      <div id="powerContainer"><p>Power: </p><button id="powerBtn" onClick={this.togglePower}>ON</button></div>
+      <div id="powerContainer">
+        <p>Power: </p>
+        <button id="powerBtn" onClick={this.togglePower} style={powerBtnStyle}>
+          {this.state.isOn ? 'ON' : 'OFF'}
+        </button>
+      </div>
       <div id="drum-machine">
         <div id="drum-pads">{drumPads}</div>
         <p id="nowPlaying">Now playing:</p>
