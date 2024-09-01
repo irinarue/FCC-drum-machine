@@ -4,8 +4,25 @@ html {
   color: lavender;
 }
 
+#powerContainer {
+  border: 1px solid lavender;
+  margin: auto;
+  padding: 15px;
+  width: 45px;
+}
+
 p {
   font-style: italic;
+  margin: auto;
+}
+
+#powerBtn {
+  background-color: olive;
+  font-weight: bold;
+  padding: 5px;
+  border: 1px solid lavender;
+  margin-top: 10px;
+  color: lavender;
 }
 
 #drum-machine {
@@ -21,8 +38,8 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  align-content: center;
-  justify-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .drum-pad {

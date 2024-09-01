@@ -47,10 +47,12 @@ class DrumMachine extends Component {
         id: "",
         name: "",
         clip: ""
-      }
+      },
+      isOn: true
     };
     this.playAudio = this.playAudio.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.togglePower = this.togglePower.bind(this)
   }
 
   componentDidMount () {
@@ -69,13 +71,20 @@ class DrumMachine extends Component {
   } 
 
   playAudio (audio) {
-    this.setState(() => ({
-      currentAudio: audio
-    }));
-    const currAudioElement = document.getElementById(audio.id);
-    currAudioElement.play()
+    if (this.state.isOn){
+      this.setState(() => ({
+        currentAudio: audio
+      }));
+      const currAudioElement = document.getElementById(audio.id);
+      currAudioElement.play()
+    }
   }
-    
+  
+  togglePower () {
+    this.setState ((prevState) => ({
+      isOn: !prevState.isOn
+    }));
+  }
 
   render () {
    const drumPads = this.state.audios.map((e)=>
@@ -96,13 +105,24 @@ class DrumMachine extends Component {
     );
 
     const audioName = this.state.currentAudio.name;
+
+    const powerBtn = document.getElementById("powerBtn");
+    if (this.state.isOn) {
+      powerBtn.style.backgroundColor = "olive";
+      powerBtn.innerText = "ON";
+    } else {
+      powerBtn.style.backgroundColor = "darkred";
+      powerBtn.innerText = "OFF";
+    };
     
   return (
     <div>
       <h1>The Drum Machine</h1>
-      <p>Your forever favourite DJ!</p>
+      <h3>Your forever favourite DJ!</h3>
+      <div id="powerContainer"><p>Power: </p><button id="powerBtn" onClick={this.togglePower}>ON</button></div>
       <div id="drum-machine">
         <div id="drum-pads">{drumPads}</div>
+        <p>Now playing:</p>
         <div id="display">{audioName}</div>
       </div>
     </div>
