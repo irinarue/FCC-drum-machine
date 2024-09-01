@@ -53,9 +53,14 @@ p {
   border-radius: 15px;
 }
 
+#nowPlaying {
+  margin-top: 15px;
+}
+
 #display {
   font-weight: bold;
   margin: 10px 5px;
   padding: 5px;
-  border: 2px double lavender;  
+  border: 2px double lavender;
+  height: 25px;  
 }

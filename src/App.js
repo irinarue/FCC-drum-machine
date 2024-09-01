@@ -122,7 +122,7 @@ class DrumMachine extends Component {
       <div id="powerContainer"><p>Power: </p><button id="powerBtn" onClick={this.togglePower}>ON</button></div>
       <div id="drum-machine">
         <div id="drum-pads">{drumPads}</div>
-        <p>Now playing:</p>
+        <p id="nowPlaying">Now playing:</p>
         <div id="display">{audioName}</div>
       </div>
     </div>
