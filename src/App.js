@@ -107,7 +107,7 @@ class App extends Component {
     const audioName = this.state.currentAudio.name;
 
     const powerBtnStyle = {
-      backgroundColor: isOn ? 'olive' : 'darkred',
+      backgroundColor: this.state.isOn ? 'olive' : 'darkred',
     }
     
   return (
