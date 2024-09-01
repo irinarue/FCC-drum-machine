@@ -123,7 +123,7 @@ class App extends Component {
       <div id="drum-machine">
         <div id="drum-pads">{drumPads}</div>
         <p id="nowPlaying">Now playing:</p>
-        <div id="display">{audioName}</div>
+        <div id="display">{this.state.isOn ? audioName : '...'}</div>
       </div>
     </div>
   );
